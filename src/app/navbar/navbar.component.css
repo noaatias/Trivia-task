@@ -1,0 +1,15 @@
+#container {
+    position:relative;
+}
+
+#img2 {
+    position: absolute;
+    left: 530px;
+    top: 17px;
+}
+.footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}

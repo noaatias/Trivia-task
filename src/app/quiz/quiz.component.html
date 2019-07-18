@@ -1,0 +1,20 @@
+
+
+<div>
+ 
+ <div class="quiz">
+    <div class="quesName">Q:{{questions[whichQuestion].id}}:{{questions[whichQuestion].name}}</div>
+
+   
+
+      <div class="wrapper">
+        <div class="option box "*ngFor="let option of questions[whichQuestion].answers">
+          <button  type="button" (click)="onSelect(option,$event)"[appChangeButton]="selected" appChangeButton>{{option.name}} </button>
+
+        </div>
+      </div>
+    </div>
+    <button  type="button" (click)="onGo(selectedButton,selectedOption,$event)" [disabled]="!selected" >go</button>
+
+
+  </div>

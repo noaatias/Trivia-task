@@ -1,0 +1,122 @@
+[
+    {
+        "category": "Sports",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "At which bridge does the annual Oxford and Cambridge boat race start?",
+        "correct_answer": "Putney",
+        "incorrect_answers": [
+            "Hammersmith",
+            "Vauxhall ",
+            "Battersea"
+        ]
+    },
+    {
+        "category": "Entertainment: Board Games",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "In a standard game of Monopoly, what colour are the two cheapest properties?",
+        "correct_answer": "Brown",
+        "incorrect_answers": [
+            "Green",
+            "Yellow",
+            "Blue"
+        ]
+    },
+    {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Who is the artist of the recent new album the Uncanny Valley?",
+        "correct_answer": "Perturbator",
+        "incorrect_answers": [
+            "Carpenter Brut",
+            "GOST",
+            "Dan Terminus "
+        ]
+    },
+    {
+        "category": "General Knowledge",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which company did Valve cooperate with in the creation of the Vive?",
+        "correct_answer": "HTC",
+        "incorrect_answers": [
+            "Oculus",
+            "Google",
+            "Razer"
+        ]
+    },
+    {
+        "category": "Entertainment: Film",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Who directed the 2015 movie &quot;The Revenant&quot;?",
+        "correct_answer": "Alejandro G. I&ntilde;&aacute;rritu",
+        "incorrect_answers": [
+            "Christopher Nolan",
+            "David Fincher",
+            "Wes Anderson"
+        ]
+    },
+    {
+        "category": "Vehicles",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which Italian city is home of the car manufacturer &#039;Fiat&#039;?",
+        "correct_answer": "Turin",
+        "incorrect_answers": [
+            "Maranello",
+            "Modena",
+            "Rome"
+        ]
+    },
+    {
+        "category": "Science & Nature",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Which gas forms about 78% of the Earth&rsquo;s atmosphere?",
+        "correct_answer": "Nitrogen",
+        "incorrect_answers": [
+            "Oxygen",
+            "Argon",
+            "Carbon Dioxide"
+        ]
+    },
+    {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "What is the name of the album released in 2014 by American band Maroon 5?",
+        "correct_answer": "V",
+        "incorrect_answers": [
+            "X",
+            "III",
+            "IV"
+        ]
+    },
+    {
+        "category": "Art",
+        "type": "multiple",
+        "difficulty": "easy",
+        "question": "Who painted &quot;Swans Reflecting Elephants&quot;, &quot;Sleep&quot;, and &quot;The Persistence of Memory&quot;?",
+        "correct_answer": "Salvador Dali",
+        "incorrect_answers": [
+            "Jackson Pollock",
+            "Vincent van Gogh",
+            "Edgar Degas"
+        ]
+    },
+    {
+        "category": "Entertainment: Comics",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In Pre-Super Genesis universe of &quot;Sonic the Hedgehog&quot; comic, what was the name of  Sally Acorn&#039;s brother?",
+        "correct_answer": "Elias Acorn",
+        "incorrect_answers": [
+            "Maximillian Acorn",
+            "Alexis Acorn",
+            "Frederick Acorn"
+        ]
+    }
+]
