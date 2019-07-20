@@ -1,26 +1,29 @@
 body {
-    margin: 40px;
   }
   
   .wrapper {
     display:inline-grid;
-    grid-template-columns: 300px 300px;
-    grid-gap: 10px;
+    grid-template-columns: 570px 570px;
+    grid-gap: 30px;
     background-color: #fff;
     color: #444;
-    margin: 0 auto;    
   }
 
+.oneOption{
+  font-family: OpenSans-Semibold;
+font-size: 28px;
+letter-spacing: 0;
+text-align: center;
+vertical-align: middle;
+line-height: 87px;   
+width: 310px;
+height: 87px;
 
+}
   
   .box button {
-    width: 300px;
-    height: 150px;
-    background-color: rgb(231, 191, 191);
-    color: #fff;
-    border-radius: 10px;
-
-    padding: 20px;
+ 
+    border-radius: 23px; 
     font-size: 150%;
     display: flex;
     justify-content: center;
@@ -28,5 +31,50 @@ body {
   }
   div{
     text-align:center;
+
+}
+.answer{
+  height: 164px;
+  width: 570px;
+  background: #FAFAFA;
+  border: 2px solid #D9E6EB;
+  border-radius: 23px;
+
+}
+.go{
+  height: 69px;
+  width: 375px;
+  background: #F0F0F0;
+border-radius: 100px;
+margin-top: 47px;
+margin-bottom: 57px;
+}
+.quesName{
+  margin-top: 80px;
+  margin-bottom: 60px;
+  height: 33px;
+  font-family: OpenSans;
+font-size: 24px;
+color: #223336;
+letter-spacing: 0;
+text-align:center;
+display: inline-block;
+
+}
+.numberOfQues{
+  font-family: OpenSans-Bold;
+font-size: 32px;
+color: #0D7BAB;
+letter-spacing: 0;
+display: inline-block;
+}
+.circle{
+  width: 15px;
+  height: 15px;
+  background: #C9CFD3;
+  margin: 22px;
+}
+.circleOfQues{
+  margin-bottom: 35px;
 
 }

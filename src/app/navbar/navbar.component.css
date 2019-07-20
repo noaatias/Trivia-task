@@ -1,5 +1,7 @@
 #container {
     position:relative;
+    height: 104px;
+
 }
 
 #img2 {
@@ -9,7 +11,7 @@
 }
 .footer {
     position: fixed;
-    height: 100px;
+    height: 104px;
     bottom: 0;
     width: 100%;
 }

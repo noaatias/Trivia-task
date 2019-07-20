@@ -15,12 +15,12 @@ unclick:number=0;
     }
     else{
       if(this.unclick==0){
-        this.ChangeButton('blue')
+        this.ChangeButton( '4px solid #0D7BAB')
         this.unclick=1;
         console.log(this.unclick)
       }
       else{
-        this.ChangeButton('rgb(231, 191, 191)')
+        this.ChangeButton('2px solid #D9E6EB')
         this.unclick=0;
   
       }
@@ -33,7 +33,8 @@ unclick:number=0;
  
  
   private ChangeButton(color: string) {
-    this.el.nativeElement.style.backgroundColor = color;
+    this.el.nativeElement.style.border =color;
+
   }
 }
 

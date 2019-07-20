@@ -14,9 +14,9 @@ export class QuizComponent implements OnInit {
   options: Option[] = [];
   whichQuestion: number = 0;
   selected: boolean = false;
-  selectedButton: Event;
+  selectedButton: any;
   selectedOption: Option;
-  onSelect(option: Option, button: Event): void {
+  onSelect(button,option): void {
     if (this.selected) {
       if(this.selectedOption==option){
   this.selectedButton = null;
@@ -24,7 +24,7 @@ export class QuizComponent implements OnInit {
       this.selected = !this.selected;
       }
     
-      console.log("selected");
+
     } else {
       this.selectedOption = option;
       this.selectedButton = button;
@@ -32,16 +32,18 @@ export class QuizComponent implements OnInit {
     }
   }
   onGo(selectedButton, selectedOption, event): void {
-    console.log(selectedButton, selectedOption, event.target["innerHTML"]);
     if (event.target["innerHTML"] == "go") {
       if (selectedOption.isAnswer == false) {
-        selectedButton.target["innerHTML"] =
-          selectedButton.target["innerHTML"] +
-          '<img src="/assets/Group3.png" id="img2" />';
+        selectedButton.path[0].innerHTML = '<img src="/assets/Group3.png" id="img3" />'+
+        selectedButton.path[0].innerHTML 
+       ;
+ 
+          ;
       } else {
-        selectedButton.target["innerHTML"] =
-          selectedButton.target["innerHTML"] +
-          '<img src="/assets/Group.png" id="img2" />';
+
+        selectedButton.path[0].innerHTML = '<img src="/assets/Group.png" id="img3" />'+
+        selectedButton.path[0].innerHTML 
+         ;
       }
       event.target["innerHTML"] = "continue";
     } else if (event.target["innerHTML"] == "continue") {
