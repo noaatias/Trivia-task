@@ -51,7 +51,7 @@
         "category": "Entertainment: Film",
         "type": "multiple",
         "difficulty": "easy",
-        "question": "Who directed the 2015 movie &quot;The Revenant&quot;?",
+        "question": "Who directed the 2015 movie The Revenant?",
         "correct_answer": "Alejandro G. I&ntilde;&aacute;rritu",
         "incorrect_answers": [
             "Christopher Nolan",

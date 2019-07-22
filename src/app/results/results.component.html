@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="jumbotron">
+        <h1 class="display-4">Your final Score: {{ totalScore }}/{{all}}</h1>
+
+      </div>
+      <div *ngIf="totalScore>(all/2);else no">
+        <img src="https://media.giphy.com/media/ZeEDEW0CsoRJ6/giphy.gif">
+
+      </div>
+
+
+      <ng-template #no>
+
+        <img src="https://media.giphy.com/media/1hMbkOaFfYmZvvEBq9/giphy.gif">
+      </ng-template>
+
+
+    </div>
+  </div>
+</div>

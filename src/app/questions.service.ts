@@ -11,7 +11,7 @@ export class QuestionsService {
 
 
   fetchQuestions():any{
-    return this.http.get('/assets/data/questions.json')
+    return this.http.get('https://opentdb.com/api.php?amount=10&type=multiple')
  
   }
 }
