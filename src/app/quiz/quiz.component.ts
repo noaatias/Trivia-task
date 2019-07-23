@@ -15,47 +15,38 @@ export class QuizComponent implements OnInit {
   whichQuestion: number = 0;
   selected: boolean = false;
   totalScore: number = 0;
-  selectedButton: any;
-  selectedOption: Option;
-  onSelect(button, option): void {//choose one option and save this
+  exPa: any; //one option
+  shouldRevealAnswer: boolean = false;
 
-    if (button.currentTarget.style.borderColor == "rgb(13, 123, 171)"||button.currentTarget.style.borderColor == "rgb(217, 230, 235)") {
-      if (this.selected) {
-        if (this.selectedOption == option) {
-          this.selectedButton = null;
-          this.selectedOption = null;
-          this.selected = false;
-        }
-
-      } else {
-        this.selectedOption = option;
-        this.selectedButton = button.currentTarget;
-        this.selected = true;
-      }
-    }
+  exampleMethodParent($event) {
+    this.exPa = $event;
   }
 
-  onGo(selectedButton, selectedOption, event): void {//check if the option is true and add img
+  onGo(event) {
+    //check if the option is true and add img
+    console.log(this.shouldRevealAnswer);
+
     if (event.target["innerText"] == "OK") {
-      if (selectedOption.isAnswer == false) {
-        selectedButton["innerHTML"] =
-          '<img src="/assets/Group3.png" id="img3" />' +
-          selectedButton["innerHTML"];
-      } else {
-        this.totalScore++;
-        selectedButton["innerHTML"] =
-          '<img src="/assets/Group.png" id="img3" />' +
-          selectedButton["innerHTML"];
-      }
+      this.shouldRevealAnswer = true;
       event.target["innerHTML"] = "continue";
-    } else {
+
+      // selectedButton["innerHTML"] =
+      //   '<img src="/assets/Group3.png" id="img3" />' +
+    } //   selectedButton["innerHTML"];
+    else {
+      this.shouldRevealAnswer = false;
+
+      // selectedButton["innerHTML"] =
+      //   '<img src="/assets/Group.png" id="img3" />' +
+      //   selectedButton["innerHTML"];
+      if (this.exPa.isAnswer) {
+        this.totalScore++;
+      }
       this.whichQuestion++;
       event.target.innerText = "OK";
-      this.selected = false;
     }
-    this.selectedButton = null;
-    this.selectedOption = null;
   }
+
   constructor(
     private questionsService: QuestionsService,
     private router: Router,
@@ -66,7 +57,8 @@ export class QuizComponent implements OnInit {
     this.getData();
   }
 
-  getData() {//get the data from API
+  getData() {
+    //get the data from API
     this.data = this.questionsService.fetchQuestions();
 
     this.data.subscribe(res => {
@@ -88,7 +80,8 @@ export class QuizComponent implements OnInit {
       });
     });
   }
-  shuffle(questions) {//shuffle the options
+  shuffle(questions) {
+    //shuffle the options
     var i, j, temp;
     for (i = questions.length - 1; i > 0; i--) {
       j = Math.floor(Math.random() * (i + 1));

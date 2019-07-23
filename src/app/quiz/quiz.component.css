@@ -8,17 +8,7 @@ body {}
   color: #444;
 }
 
-.oneOption {
-  font-family: OpenSans-Semibold;
-  font-size: 28px;
-  letter-spacing: 0;
-  text-align: center;
-  vertical-align: middle;
-  width: 310px;
-  height: 87px;
-  padding: 26px;
 
-}
 
 .box button {
 
@@ -34,14 +24,7 @@ div {
 
 }
 
-.answer {
-  height: 164px;
-  width: 570px;
-  background: #FAFAFA;
-  border: 2px solid #D9E6EB;
-  border-radius: 23px;
 
-}
 
 .go {
   height: 69px;
@@ -95,14 +78,6 @@ div {
   margin-bottom: 35px;
 
 }
-
-#img3 {
-  margin-left: 37px;
-  margin-top: 47px;
-  margin-bottom: 47px
-}
-
-
 .full {
   background: #0D7BAB;
 }

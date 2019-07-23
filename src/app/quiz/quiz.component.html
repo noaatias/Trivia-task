@@ -4,16 +4,14 @@
     <p class="quesName">{{questions[whichQuestion].name}}</p>
     <div class="wrapper">
       <div class="option box " *ngFor="let option of questions[whichQuestion].answers">
-        <button class="answer" type="button" (click)="onSelect($event,option)" [appChangeButton]="selected">
-          <span class="oneOption">{{option.name}} </span>
-        </button>
+        <app-button-answer [shouldRevealAnswer]="shouldRevealAnswer" (exampleOutput)="exampleMethodParent($event)"
+           [option]="option"></app-button-answer>
 
       </div>
     </div>
   </div>
   <div>
-    <button class="go" type="button" (click)="onGo(selectedButton,selectedOption,$event)" [disabled]="!selected"
-      [appAnswer]="selectedButton" [option]="selectedOption">
+    <button class="go" type="button" (click)="onGo($event)">
       <div class="text">OK</div>
     </button>
     <div class="circleOfQues">
