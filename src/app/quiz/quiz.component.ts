@@ -17,7 +17,7 @@ export class QuizComponent implements OnInit {
   totalScore: number = 0;
   selectedButton: any;
   selectedOption: Option;
-  onSelect(button, option): void {
+  onSelect(button, option): void {//choose one option and save this
     if (button.currentTarget.style.borderColor == "rgb(13, 123, 171)") {
       if (this.selected) {
         if (this.selectedOption == option) {
@@ -33,7 +33,7 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  onGo(selectedButton, selectedOption, event): void {
+  onGo(selectedButton, selectedOption, event): void {//check if the option is true and add img
     if (event.target["innerText"] == "OK") {
       if (selectedOption.isAnswer == false) {
         selectedButton["innerHTML"] =
@@ -64,7 +64,7 @@ export class QuizComponent implements OnInit {
     this.getData();
   }
 
-  getData() {
+  getData() {//get the data from API
     this.data = this.questionsService.fetchQuestions();
 
     this.data.subscribe(res => {
@@ -86,7 +86,7 @@ export class QuizComponent implements OnInit {
       });
     });
   }
-  shuffle(questions) {
+  shuffle(questions) {//shuffle the options
     var i, j, temp;
     for (i = questions.length - 1; i > 0; i--) {
       j = Math.floor(Math.random() * (i + 1));

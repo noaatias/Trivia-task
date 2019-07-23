@@ -9,7 +9,7 @@ export class ChangeButtonDirective {
   constructor(private el: ElementRef) {}
 
   @HostListener("click") onMouseEnter() {
-    if (this.selected && this.unclick == 0) {
+    if (this.selected && this.unclick == 0) {//if you select button you cant click until you remove what you select
       console.log("cant click");
     } else {
       if (this.unclick == 0) {
@@ -24,7 +24,7 @@ export class ChangeButtonDirective {
     }
   }
 
-  private ChangeButton(color: string) {
+  private ChangeButton(color: string) {// change the border style
     this.el.nativeElement.style.border = color;
   }
 }

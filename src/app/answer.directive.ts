@@ -8,10 +8,10 @@ import {
 import { Option } from "./models/option";
 
 @Directive({
-  selector: "[appCircles]"
+  selector: "[appAnswer]"
 })
-export class CirclesDirective {
-  @Input("appCircles") selectedButton: Event;
+export class AnswerDirective {
+  @Input("appAnswer") selectedButton: Event;
   @Input() option: Option;
 
   unclick: number = 0;
@@ -19,7 +19,7 @@ export class CirclesDirective {
 
   @HostListener("click") onMouseEnter() {
 
-    if (this.unclick == 0) {
+    if (this.unclick == 0) {//change the color of the button.
       if (this.option.isAnswer) {
         this.selectedButton["style"].borderColor = "#33C933";
       } else {
@@ -31,5 +31,4 @@ export class CirclesDirective {
     }
   }
 
-  private ChangeCircle(event) {}
 }
