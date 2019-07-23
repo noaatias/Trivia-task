@@ -1,17 +1,18 @@
 #container {
-    position:relative;
-    height: 104px;
+  position: relative;
+  height: 104px;
 
 }
 
 #img2 {
-    position: absolute;
-    left: 530px;
-    top: 17px;
+  position: absolute;
+  left: 530px;
+  top: 17px;
 }
+
 .footer {
-    position: fixed;
-    height: 104px;
-    bottom: 0px;
-    width: 100%;
+  position: fixed;
+  height: 104px;
+  bottom: 0px;
+  width: 100%;
 }

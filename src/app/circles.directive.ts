@@ -18,16 +18,11 @@ export class CirclesDirective {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
   @HostListener("click") onMouseEnter() {
-    console.log(event);
 
-    console.log('circle')
     if (this.unclick == 0) {
-      console.log(this.option.isAnswer);
       if (this.option.isAnswer) {
-        console.log(this.selectedButton["style"].borderColor)
         this.selectedButton["style"].borderColor = "#33C933";
       } else {
-        console.log("false",  this.selectedButton["style"].borderColor);
         this.selectedButton["style"].borderColor = "#FB4343 ";
       }
       this.unclick = 1;
@@ -36,6 +31,5 @@ export class CirclesDirective {
     }
   }
 
-  private ChangeCircle(event) {
-  }
+  private ChangeCircle(event) {}
 }

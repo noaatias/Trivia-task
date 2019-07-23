@@ -1,27 +1,28 @@
+<div *ngIf="questions[whichQuestion]">
+  <div class="quiz">
+    <p class="numberOfQues">Q{{questions[whichQuestion].id+1}}:</p>
+    <p class="quesName">{{questions[whichQuestion].name}}</p>
+    <div class="wrapper">
+      <div class="option box " *ngFor="let option of questions[whichQuestion].answers">
+        <button class="answer" type="button" (click)="onSelect($event,option)" [appChangeButton]="selected">
+          <span class="oneOption">{{option.name}} </span>
+        </button>
 
-
-
-
- <div *ngIf="questions[whichQuestion]">
- <div class="quiz" >
-   <p class="numberOfQues">Q{{questions[whichQuestion].id+1}}:</p>  <p class="quesName">{{questions[whichQuestion].name}}</p>
-      <div class="wrapper" >
-        <div class="option box " *ngFor="let option of questions[whichQuestion].answers">
-          <button class="answer"  type="button"  (click)="onSelect($event,option)" [appChangeButton]="selected" >
-            <span class="oneOption">{{option.name}} </span> 
-          </button>
-
-        </div>
       </div>
     </div>
-    <div>
-    <button  class="go" type="button" (click)="onGo(selectedButton,selectedOption,$event)" [disabled]="!selected" [appCircles]="selectedButton" [option]="selectedOption"><div class="text">OK</div></button>
+  </div>
+  <div>
+    <button class="go" type="button" (click)="onGo(selectedButton,selectedOption,$event)" [disabled]="!selected"
+      [appCircles]="selectedButton" [option]="selectedOption">
+      <div class="text">OK</div>
+    </button>
     <div class="circleOfQues">
-<span class="circle" *ngFor="let circle of questions; let i=index"  id={{i}} [ngClass]="{'full':  i<=whichQuestion}" #circle{{i}}> </span>
-</div>
-</div>
+      <span class="circle" *ngFor="let circle of questions; let i=index" id={{i}}
+        [ngClass]="{'full':  i<=whichQuestion}" #circle{{i}}> </span>
+    </div>
   </div>
-  <div *ngIf="!questions[whichQuestion]">
-      <app-results [totalScore]="totalScore" [all]="questions.length"></app-results>
+</div>
+<div *ngIf="!questions[whichQuestion]">
+  <app-results [totalScore]="totalScore" [all]="questions.length"></app-results>
 
-  </div>
+</div>

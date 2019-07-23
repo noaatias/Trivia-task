@@ -3,20 +3,13 @@
     <div class="col-12">
       <div class="jumbotron">
         <h1 class="display-4">Your final Score: {{ totalScore }}/{{all}}</h1>
-
       </div>
       <div *ngIf="totalScore>(all/2);else no">
         <img src="https://media.giphy.com/media/ZeEDEW0CsoRJ6/giphy.gif">
-
       </div>
-
-
       <ng-template #no>
-
-        <img src="https://media.giphy.com/media/1hMbkOaFfYmZvvEBq9/giphy.gif">
+        <img src="https://media.istockphoto.com/illustrations/try-again-label-illustration-id505716206?k=6&m=505716206&s=612x612&w=0&h=NpuKqGXi0I5BAQbFq2hFOSkvPiClEctfgJ9PRyc3f1w=">
       </ng-template>
-
-
     </div>
   </div>
 </div>

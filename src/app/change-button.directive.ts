@@ -15,7 +15,6 @@ export class ChangeButtonDirective {
       if (this.unclick == 0) {
         this.ChangeButton("4px solid #0D7BAB");
         this.unclick = 1;
-        console.log(this.unclick);
       } else if (
         this.el.nativeElement.style.borderColor == "rgb(13, 123, 171)"
       ) {

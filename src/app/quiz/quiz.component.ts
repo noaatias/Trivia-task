@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Option } from "../models/option";
 import { QuestionsService } from "../questions.service";
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-quiz",
@@ -14,25 +14,24 @@ export class QuizComponent implements OnInit {
   options: Option[] = [];
   whichQuestion: number = 0;
   selected: boolean = false;
-  totalScore:number=0;
+  totalScore: number = 0;
   selectedButton: any;
   selectedOption: Option;
   onSelect(button, option): void {
-
-    console.log(button.currentTarget.style.borderColor);
-    if(button.currentTarget.style.borderColor=='rgb(13, 123, 171)'){
-    if (this.selected) {
-      if (this.selectedOption == option) {
-        this.selectedButton = null;
-        this.selectedOption = null;
-        this.selected = false
+    if (button.currentTarget.style.borderColor == "rgb(13, 123, 171)") {
+      if (this.selected) {
+        if (this.selectedOption == option) {
+          this.selectedButton = null;
+          this.selectedOption = null;
+          this.selected = false;
+        }
+      } else {
+        this.selectedOption = option;
+        this.selectedButton = button.currentTarget;
+        this.selected = true;
       }
-    } else {
-      this.selectedOption = option;
-      this.selectedButton = button.currentTarget;
-      this.selected = true
     }
-  }}
+  }
 
   onGo(selectedButton, selectedOption, event): void {
     if (event.target["innerText"] == "OK") {
@@ -46,12 +45,8 @@ export class QuizComponent implements OnInit {
           '<img src="/assets/Group.png" id="img4" />' +
           selectedButton["innerHTML"];
       }
-      console.log(event.target["innerHTML"]);
       event.target["innerHTML"] = "continue";
-      console.log(event.target["innerHTML"]);
-
     } else {
-
       this.whichQuestion++;
       event.target.innerText = "OK";
       this.selected = false;
@@ -59,16 +54,19 @@ export class QuizComponent implements OnInit {
     this.selectedButton = null;
     this.selectedOption = null;
   }
-  constructor(private questionsService: QuestionsService,private router:Router,private route:ActivatedRoute) {}
+  constructor(
+    private questionsService: QuestionsService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.getData();
-
   }
 
   getData() {
     this.data = this.questionsService.fetchQuestions();
-    
+
     this.data.subscribe(res => {
       res.results.map((ques, i) => {
         ques.incorrect_answers.map(option => {
@@ -77,30 +75,25 @@ export class QuizComponent implements OnInit {
         this.options.push(
           new Option({ name: ques.correct_answer, isAnswer: true })
         );
-        let newOptions=this.shuffle(this.options)
+        let newOptions = this.shuffle(this.options);
         this.questions[i] = {
           id: i,
           name: ques.question,
           answers: newOptions
         };
-        
+
         this.options = [];
       });
-      console.log(this.questions);
     });
   }
-   shuffle(questions) {
-
-    var i,
-        j,
-        temp;
+  shuffle(questions) {
+    var i, j, temp;
     for (i = questions.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        temp = questions[i];
-        questions[i] = questions[j];
-        questions[j] = temp;
+      j = Math.floor(Math.random() * (i + 1));
+      temp = questions[i];
+      questions[i] = questions[j];
+      questions[j] = temp;
     }
-console.log(questions)
-    return questions;    
-};
+    return questions;
+  }
 }
