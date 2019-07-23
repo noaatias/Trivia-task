@@ -18,7 +18,6 @@ export class QuizComponent implements OnInit {
   selectedButton: any;
   selectedOption: Option;
   onSelect(button, option): void {//choose one option and save this
-    console.log(button.currentTarget.style.borderColor,this.selected)
 
     if (button.currentTarget.style.borderColor == "rgb(13, 123, 171)"||button.currentTarget.style.borderColor == "rgb(217, 230, 235)") {
       if (this.selected) {
