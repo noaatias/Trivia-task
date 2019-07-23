@@ -19,7 +19,7 @@ export class AnswerDirective {
 
   @HostListener("click") onMouseEnter() {
 
-    if (this.unclick == 0) {//change the color of the button.
+    if (this.unclick == 0) {//change the color of the button.only when click ok.
       if (this.option.isAnswer) {
         this.selectedButton["style"].borderColor = "#33C933";
       } else {

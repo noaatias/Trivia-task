@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { QuizComponent } from "./quiz/quiz.component";
-import { appRoutes } from "./routes";
+import { AppRoutingModule } from "./app-routing.module";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { ChangeButtonDirective } from "./change-button.directive";
 import { HttpClientModule } from "@angular/common/http";
@@ -21,7 +21,7 @@ import { ResultsComponent } from "./results/results.component";
     AnswerDirective,
     ResultsComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [QuestionsService],
   bootstrap: [AppComponent]
 })

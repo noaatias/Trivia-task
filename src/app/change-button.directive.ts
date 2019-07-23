@@ -9,6 +9,7 @@ export class ChangeButtonDirective {
   constructor(private el: ElementRef) {}
 
   @HostListener("click") onMouseEnter() {
+    console.log(this.selected)
     if (this.selected && this.unclick == 0) {//if you select button you cant click until you remove what you select
       console.log("cant click");
     } else {

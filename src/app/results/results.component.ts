@@ -12,5 +12,7 @@ export class ResultsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 }

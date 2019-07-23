@@ -18,13 +18,16 @@ export class QuizComponent implements OnInit {
   selectedButton: any;
   selectedOption: Option;
   onSelect(button, option): void {//choose one option and save this
-    if (button.currentTarget.style.borderColor == "rgb(13, 123, 171)") {
+    console.log(button.currentTarget.style.borderColor,this.selected)
+
+    if (button.currentTarget.style.borderColor == "rgb(13, 123, 171)"||button.currentTarget.style.borderColor == "rgb(217, 230, 235)") {
       if (this.selected) {
         if (this.selectedOption == option) {
           this.selectedButton = null;
           this.selectedOption = null;
           this.selected = false;
         }
+
       } else {
         this.selectedOption = option;
         this.selectedButton = button.currentTarget;
@@ -42,7 +45,7 @@ export class QuizComponent implements OnInit {
       } else {
         this.totalScore++;
         selectedButton["innerHTML"] =
-          '<img src="/assets/Group.png" id="img4" />' +
+          '<img src="/assets/Group.png" id="img3" />' +
           selectedButton["innerHTML"];
       }
       event.target["innerHTML"] = "continue";
