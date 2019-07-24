@@ -5,7 +5,7 @@
     <div class="wrapper">
       <div class="option box " *ngFor="let option of questions[whichQuestion].answers">
         <app-button-answer [shouldRevealAnswer]="shouldRevealAnswer" (exampleOutput)="exampleMethodParent($event)"
-           [option]="option"></app-button-answer>
+          [option]="option" [ifSelected]="ifSelected"></app-button-answer>
 
       </div>
     </div>

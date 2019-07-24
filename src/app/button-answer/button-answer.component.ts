@@ -10,22 +10,35 @@ export class ButtonAnswerComponent implements OnInit {
   @Input() option: Option;
 
   @Input() shouldRevealAnswer: boolean;
-  @Output() exampleOutput = new EventEmitter<any>();
+  @Input() ifSelected: boolean;
+
+  @Output() exampleOutput = new EventEmitter<{
+    option: Option;
+    ifSelected: boolean;
+  }>();
+
   selected: boolean = false;
 
-  onSelect( option): void {
-    //choose one option and save this
-    if (this.selected) {
-      
-        this.selected = false;
-      
+  onSelect(option): void {
+    //choose one option and save thisi
+    if (this.selected == false) {
+      if (this.ifSelected == false) {
+        this.ifSelected = true;
+        this.selected = true;
+      }
     } else {
-      this.selected = true;
+      if (this.ifSelected == true) {
+        this.ifSelected = false;
+        this.selected = false;
+      }
     }
   }
 
   exampleMethodChild() {
-    this.exampleOutput.emit(this.option);
+    this.exampleOutput.emit({
+      option: this.option,
+      ifSelected: this.ifSelected
+    });
   }
   constructor() {}
 

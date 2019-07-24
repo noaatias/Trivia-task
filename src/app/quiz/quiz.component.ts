@@ -17,31 +17,24 @@ export class QuizComponent implements OnInit {
   totalScore: number = 0;
   exPa: any; //one option
   shouldRevealAnswer: boolean = false;
-
+  ifSelected: boolean;
   exampleMethodParent($event) {
     this.exPa = $event;
+    this.ifSelected = this.exPa.ifSelected;
   }
 
   onGo(event) {
     //check if the option is true and add img
-    console.log(this.shouldRevealAnswer);
-
     if (event.target["innerText"] == "OK") {
       this.shouldRevealAnswer = true;
       event.target["innerHTML"] = "continue";
-
-      // selectedButton["innerHTML"] =
-      //   '<img src="/assets/Group3.png" id="img3" />' +
-    } //   selectedButton["innerHTML"];
+    } 
     else {
       this.shouldRevealAnswer = false;
-
-      // selectedButton["innerHTML"] =
-      //   '<img src="/assets/Group.png" id="img3" />' +
-      //   selectedButton["innerHTML"];
       if (this.exPa.isAnswer) {
         this.totalScore++;
       }
+      this.ifSelected = false;
       this.whichQuestion++;
       event.target.innerText = "OK";
     }
@@ -55,6 +48,7 @@ export class QuizComponent implements OnInit {
 
   ngOnInit() {
     this.getData();
+    this.ifSelected = false;
   }
 
   getData() {
