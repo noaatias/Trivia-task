@@ -11,18 +11,16 @@
     </div>
   </div>
   <div>
+
     <button class="go" type="button" (click)="onGo()">
       <div *ngIf="!shouldRevealAnswer" class="text">OK</div>
-      <div *ngIf="shouldRevealAnswer" class="text">Continue</div>
+      <div *ngIf="shouldRevealAnswer" [routerLink]="showResults? link:''" class="text">Continue</div>
 
     </button>
+
     <div class="circleOfQues">
       <span class="circle" *ngFor="let circle of questions; let i=index" id={{i}}
         [ngClass]="{'full':  i<=whichQuestion}" #circle{{i}}> </span>
     </div>
   </div>
-</div>
-<div *ngIf="!questions[whichQuestion]">
-  <app-results [totalScore]="totalScore" [all]="questions.length"></app-results>
-
 </div>

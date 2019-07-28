@@ -7,12 +7,15 @@ import { ActivatedRoute } from "@angular/router";
   styleUrls: ["./results.component.css"]
 })
 export class ResultsComponent implements OnInit {
-  @Input() totalScore: number;
-  @Input() all: number;
+  totalScore: any;
+ all: any;
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
-    
+  this.all = this.route.snapshot.paramMap.get('all');
+  this.totalScore = this.route.snapshot.paramMap.get('totalScore');
+
+
   }
 }

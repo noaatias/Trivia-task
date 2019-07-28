@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {Option} from "../models/option";
 import {Router, ActivatedRoute} from "@angular/router";
 import {QuestionsService} from "./questions.service";
+import {ThrowStmt} from "@angular/compiler";
 
 @Component({
   selector: "app-quiz",
@@ -18,17 +19,23 @@ export class QuizComponent implements OnInit {
   exPa: any; //one option
   shouldRevealAnswer: boolean = false;
   ifSelected: boolean;
-  
+  showResults: boolean = false;
+
   exampleMethodParent($event) {
     this.exPa = $event;
     this.ifSelected = this.exPa.ifSelected;
-    console.log(this.exPa);
+  }
+  get link(): string {
+    return `/results/${this.questions.length}/${this.totalScore}`;
   }
 
   onGo() {
     //check if the option is true and add img
     if (!this.shouldRevealAnswer) {
       this.shouldRevealAnswer = true;
+      if (this.whichQuestion == this.questions.length - 1) {
+        this.showResults = true;
+      }
     } else {
       this.shouldRevealAnswer = false;
       this.ifSelected = false;
