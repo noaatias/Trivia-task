@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
-import { Option } from "../models/option";
-import { QuestionsService } from "../questions.service";
-import { Router, ActivatedRoute } from "@angular/router";
+import {Component, OnInit} from "@angular/core";
+import {Option} from "../models/option";
+import {Router, ActivatedRoute} from "@angular/router";
+import {QuestionsService} from "./questions.service";
 
 @Component({
   selector: "app-quiz",
@@ -18,33 +18,28 @@ export class QuizComponent implements OnInit {
   exPa: any; //one option
   shouldRevealAnswer: boolean = false;
   ifSelected: boolean;
+  
   exampleMethodParent($event) {
     this.exPa = $event;
     this.ifSelected = this.exPa.ifSelected;
+    console.log(this.exPa);
   }
 
-  onGo(event) {
+  onGo() {
     //check if the option is true and add img
-    if (event.target["innerText"] == "OK") {
+    if (!this.shouldRevealAnswer) {
       this.shouldRevealAnswer = true;
-      event.target["innerHTML"] = "continue";
-    } 
-    else {
+    } else {
       this.shouldRevealAnswer = false;
-      if (this.exPa.isAnswer) {
-        this.totalScore++;
-      }
       this.ifSelected = false;
       this.whichQuestion++;
-      event.target.innerText = "OK";
+      if (this.exPa.option.isAnswer) {
+        this.totalScore++;
+      }
     }
   }
 
-  constructor(
-    private questionsService: QuestionsService,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private questionsService: QuestionsService) {}
 
   ngOnInit() {
     this.getData();
@@ -58,10 +53,10 @@ export class QuizComponent implements OnInit {
     this.data.subscribe(res => {
       res.results.map((ques, i) => {
         ques.incorrect_answers.map(option => {
-          this.options.push(new Option({ name: option, isAnswer: false }));
+          this.options.push(new Option({name: option, isAnswer: false}));
         });
         this.options.push(
-          new Option({ name: ques.correct_answer, isAnswer: true })
+          new Option({name: ques.correct_answer, isAnswer: true})
         );
         let newOptions = this.shuffle(this.options);
         this.questions[i] = {

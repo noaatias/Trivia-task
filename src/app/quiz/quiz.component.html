@@ -11,8 +11,10 @@
     </div>
   </div>
   <div>
-    <button class="go" type="button" (click)="onGo($event)">
-      <div class="text">OK</div>
+    <button class="go" type="button" (click)="onGo()">
+      <div *ngIf="!shouldRevealAnswer" class="text">OK</div>
+      <div *ngIf="shouldRevealAnswer" class="text">Continue</div>
+
     </button>
     <div class="circleOfQues">
       <span class="circle" *ngFor="let circle of questions; let i=index" id={{i}}
