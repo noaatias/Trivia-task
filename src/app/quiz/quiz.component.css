@@ -24,7 +24,10 @@ div {
 
 }
 
-
+.text{
+  border: none;
+  outline:none;
+}
 
 .go {
   height: 69px;
@@ -38,10 +41,14 @@ div {
   color: #FFFFFF;
   letter-spacing: 0;
   text-align: center;
+  border: none;
+  outline:none;
 }
 
 .go:hover {
   background-color: #F68034;
+  border: none;
+  outline:none;
 }
 
 .quesName {

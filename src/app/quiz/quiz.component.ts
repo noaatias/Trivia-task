@@ -28,8 +28,17 @@ export class QuizComponent implements OnInit {
   get link(): string {
     return `/results/${this.questions.length}/${this.totalScore}`;
   }
-
+  decodeHTML  (html) {
+    var txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+  };
+  
+  // Example
+  // Returns "<p>In this course, you'll learn:</p>"
   onGo() {
+    console.log(this.showResults)
+
     //check if the option is true and add img
     if (!this.shouldRevealAnswer) {
       this.shouldRevealAnswer = true;
@@ -60,15 +69,15 @@ export class QuizComponent implements OnInit {
     this.data.subscribe(res => {
       res.results.map((ques, i) => {
         ques.incorrect_answers.map(option => {
-          this.options.push(new Option({name: option, isAnswer: false}));
+          this.options.push(new Option({name: this.decodeHTML(option), isAnswer: false}));
         });
         this.options.push(
-          new Option({name: ques.correct_answer, isAnswer: true})
+          new Option({name: this.decodeHTML(ques.correct_answer), isAnswer: true})
         );
         let newOptions = this.shuffle(this.options);
         this.questions[i] = {
           id: i,
-          name: ques.question,
+          name: this.decodeHTML(ques.question),
           answers: newOptions
         };
 

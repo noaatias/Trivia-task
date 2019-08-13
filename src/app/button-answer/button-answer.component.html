@@ -3,5 +3,5 @@
   'falseAnswer':(shouldRevealAnswer&&selected&&!option.isAnswer)}" [disabled]="shouldRevealAnswer">
   <img *ngIf="shouldRevealAnswer&&selected" [src]="option.isAnswer ? '/assets/Group.png' : '/assets/Group3.png'"
     id="img3" />
-  <p class="oneOption">{{option.name}} </p>
+  <p class="oneOption">{{(option.name)}} </p>
 </button>
