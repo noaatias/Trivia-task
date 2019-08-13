@@ -34,10 +34,8 @@ export class QuizComponent implements OnInit {
     return txt.value;
   };
   
-  // Example
-  // Returns "<p>In this course, you'll learn:</p>"
+
   onGo() {
-    console.log(this.showResults)
 
     //check if the option is true and add img
     if (!this.shouldRevealAnswer) {
