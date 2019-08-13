@@ -1,4 +1,11 @@
-
+<div *ngIf="!questions[whichQuestion]&&!showResults">
+  <mat-progress-spinner
+  class="example-margin"
+  color="accent"
+  mode="indeterminate"
+  >
+</mat-progress-spinner>
+</div>
 <div *ngIf="questions[whichQuestion];else no">
   <div class="quiz">
     <p class="numberOfQues">Q{{questions[whichQuestion].id+1}}:</p>
@@ -26,10 +33,6 @@
   </div>
 </div>
 <ng-template #no>
-  <mat-progress-spinner
-  class="example-margin"
-  color="accent"
-  mode="indeterminate"
-  >
-</mat-progress-spinner>
+  <img
+    src="https://media.istockphoto.com/illustrations/try-again-label-illustration-id505716206?k=6&m=505716206&s=612x612&w=0&h=NpuKqGXi0I5BAQbFq2hFOSkvPiClEctfgJ9PRyc3f1w=">
 </ng-template>
