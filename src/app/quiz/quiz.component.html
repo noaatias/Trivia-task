@@ -1,3 +1,11 @@
+<div *ngIf="!questions[whichQuestion]">
+  <mat-progress-spinner
+  class="example-margin"
+  color="accent"
+  mode="indeterminate"
+  >
+</mat-progress-spinner>
+</div>
 <div *ngIf="questions[whichQuestion]">
   <div class="quiz">
     <p class="numberOfQues">Q{{questions[whichQuestion].id+1}}:</p>
@@ -14,7 +22,7 @@
 
     <button class="go" type="button" (click)="onGo()" [disabled]="!ifSelected">
       <div *ngIf="!shouldRevealAnswer" class="text" >OK</div>
-      <div *ngIf="shouldRevealAnswer" [routerLink]="showResults? link:''" class="text">Continue</div>
+      <div *ngIf="shouldRevealAnswer" [routerLink]="whichQuestion == questions.length - 1? link:''" class="text">Continue</div>
 
     </button>
 

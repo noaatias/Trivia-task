@@ -10,6 +10,7 @@ import { ResultsComponent } from "./results/results.component";
 import { ButtonAnswerComponent } from './button-answer/button-answer.component';
 import { QuestionsService } from './quiz/questions.service';
 import { FooterComponent } from './footer/footer.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     ButtonAnswerComponent,
     FooterComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule,MatProgressSpinnerModule],
   providers: [QuestionsService],
   bootstrap: [AppComponent]
 })

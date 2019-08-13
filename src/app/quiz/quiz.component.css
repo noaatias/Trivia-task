@@ -28,7 +28,12 @@ div {
   border: none;
   outline:none;
 }
-
+.example-margin{
+  top: 50%;
+  left: 45%;
+  margin-bottom: 225px;
+  margin-top: 225px;
+}
 .go {
   height: 69px;
   width: 375px;
